@@ -1,0 +1,121 @@
+@charset "utf-8";
+#chartUl li{
+	line-height: 30px;
+	cursor:pointer;
+}
+#chartUl li font{
+	font-size: 20px;
+	margin-right: 8px;
+}
+.chartAcFont{
+	color: #FE680A;
+	
+}
+#chartUl li:HOVER {
+	color: #FE680A;
+	font-weight: 600;
+}
+#chartDiv_1 p{
+	height: 25px;
+/* 	width: 90px; */
+	padding-top: 3px;
+	border-radius:10px;
+	background: #bbb;
+	cursor:pointer;
+	padding: 2px 10px;
+}
+#chartDiv_1 .tip{
+	color: #fff;
+	background: #FE680A;
+}
+#chartDiv_1 .chartAcPCountry{
+	color: #fff;
+	background: #FE680A;
+}
+#chartDiv_1 :HOVER{
+	color: #fff;
+	font-weight: 600;
+	background: #FE680A;
+}
+
+/* 底部菜单样式 */
+.bottomMenu{
+	width: 100%;
+	height: 11%;
+	position: absolute;
+	top:89%;
+	text-align: center;
+/* 	font-family: Microsoft YaHei; */
+}
+.bottomMenu_01{
+	height: 50px;
+/* 	width: 8%; */
+	display: inline-block;
+	background: #fff;
+/* 	font-size: 18px; */
+	line-height: 50px;
+	border: 1px solid #555;
+	border-radius:20px;
+	-moz-border-radius:20px; 
+	cursor: pointer;
+	margin-right: 23px;
+	padding: 0px 20px;
+}
+.bottomMenu_01_active{
+	color: #fff;
+	background: #0052C9;
+}
+.bottomMenu_01:HOVER{
+	color: #fff;
+	background: #0052C9;
+	font-weight: bold;
+}
+.bottomMenu_01_01{
+	height: 50%;margin:-8px;font-size: 20px;
+}
+.bottomMenu_01_02{
+	height: 50%;
+	font-size: 1px;
+	margin-top: 2px;
+}
+.bottomMenu_01_ExPOActive{
+	color: #fff;
+	background: #0052C9;  
+}
+.EXPO{
+	border: 1px solid #555;
+}
+.EXPO:HOVER{
+	color: #fff;
+	font-weight: bold;
+	background:background: #0052C9;  
+}
+.botMenu_3{
+	height: 70px;width: 100%;
+	margin-top: -70px;
+}
+.botMenu_3_1{
+	height: 40px;width: 40px;display: inline-block;
+	line-height: 40px;
+	border-radius:50%;
+	border: 1px solid #666;
+	background: #fff;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+.botMenu_3_1_son2{
+	margin-left: -20px;margin-top: -30px;
+	visibility: hidden;
+}
+
+.botMenu_3_1:HOVER{
+	color: #fff;
+	font-weight: bold;
+	background: #0052C9;
+}
+.bm31Active{
+	background: #0052C9;
+	color: #fff;
+	border: 1px solid #555;
+}

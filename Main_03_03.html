@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+
+	<script src="resources/js/jquery.js"></script>
+	<link rel="stylesheet" href="resources/myCss/myCss.css">
+	<script src="resources/echarts/echarts.min40.js"></script>
+<!-- 	<script src="http://gallery.echartsjs.com/dep/echarts/map/js/world.js"></script> -->
+	 <script src="resources/echarts/world.js"></script>
+	<script src="resources/myJS/data2.js"></script>
+	
+	<!-- 时间轴弹出 -->
+<link rel="stylesheet" type="text/css" href="resources/timeProp/css/style2.css"/>
+<script language="javascript" src="resources/timeProp/js/jquery.easing.min.js"></script>
+<script language="javascript" src="resources/timeProp/js/custom.js"></script>
+</head>
+
+<body style="width: 100%;height: 100%;margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;">
+<div style="position:absolute;width:100%; top:2%;color: #999;font-size: 24px;letter-spacing: 2px;text-align: center;">
+	<h1>近五年西郊口岸进口全球数据</h1>
+</div>
+
+
+
+	</div>
+
+ <div id="main" style="width: 100%;height:98%;position:absolute;top:2%;"></div>
+
+<!-- 时间轴弹出 -->
+<div class="reg" toPage="Main_03_Time_X_04.html" style="cursor: pointer;"></div>
+
+<div id="reg_setp">
+  <div class="back_setp" style="z-index: 9999;position: absolute;top:81.8%;left:70%;
+   
+    height: 25px;
+    
+    padding-top: 3px;
+    border-radius: 10px;
+    background: #bbb;
+    cursor: pointer;
+    padding: 2px 10px;">
+	  返回 Return
+	  
+  </div>
+  
+  <div id="setp_quicklogin" style="height: 100%;width: 100%;position:absolute;left:0%;top:0px;display:none">
+	<iframe id="timeIframe" style="margin: 0;border-style: none;width: 100%;height: 100%;" src=""></iframe>
+  </div>
+</div>
+
+<script>
+
+
+var myChart = echarts.init(document.getElementById('main'));
+option = {
+    title: {
+        sublink: 'http://esa.un.org/wpp/Excel-Data/population.htm',
+        left: 'center',
+        top: 'top'
+    },
+    
+   /* tooltip: {
+        trigger: 'item',
+        formatter: function (params) {
+            var value = (params.value + '').split('.');
+            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,')
+                    + '.' + value[1];
+            return params.seriesName + '<br/>' + params.name + ' : ' + value;
+        }
+    },*/
+    tooltip : {
+        trigger: 'item',
+        formatter: '{b}',
+        backgroundColor:'red'
+    },
+    visualMap: {
+        min: 0,
+        max: 1000,
+        text:['High','Low'],
+        realtime: false,
+        calculable: true,
+        show: false,
+//         color: ['orangered','yellow','lightskyblue']
+    color: ['lightskyblue','#ddd']
+    },
+    series: [
+        {
+            name: 'World Population (2010)',
+            type: 'map',
+            mapType: 'world',
+            roam: true,
+            zoom:1,
+            itemStyle:{
+                emphasis:{
+                	label:{
+                		show:true
+                	}
+        			,itemStyle:{
+                		areaColor: 'red'
+                		,color: 'red',
+                	}
+        		}
+            },
+            
+            selectedMode:true,
+            data:[
+{name:'Afghanistan',text:'阿富汗',value:0},
+{name:'Angola',text:'安哥拉',value:0},
+{name:'Albania',text:'阿尔巴尼亚',value:0},
+{name:'United Arab Emirates',text:'阿拉伯联合酋长',value:0},
+{name:'Argentina',text:'阿根廷',value:0},
+{name:'Armenia',text:'亚美尼亚',value:0},
+// {name:'French Southern and Antarctic Lands',text:'法国南方和南极土地',value:0},
+{name:'Australia',text:'澳大利亚',value:0},
+{name:'Austria',text:'奥地利',value:0},
+{name:'Azerbaijan',text:'阿塞拜疆',value:0},
+{name:'Burundi',text:'布隆迪',value:0},
+{name:'Belgium',text:'比利时',value:0}, 
+{name:'Benin',text:'贝宁',value:0},
+{name:'Burkina Faso',text:'布基纳法索',value:0},
+{name:'Bangladesh',text:'孟加拉国',value:0},
+{name:'Bulgaria',text:'保加利亚',value:0},
+{name:'Bahamas',text:'巴哈马',value:0},
+{name:'Bosnia and Herz',text:'波斯尼亚',value:0},
+{name:'Belarus',text:'白俄罗斯',value:0},
+{name:'Belize',text:'伯利兹',value:0},
+{name:'Bermuda',text:'百慕大',value:0},
+{name:'Bolivia',text:'玻利维亚',value:0},
+{name:'Brazil',text:'巴西',value:0},
+{name:'Brunei',text:'文莱',value:0},
+{name:'Bhutan',text:'不丹',value:0},
+{name:'Botswana',text:'博茨瓦纳',value:0},
+{name:'Central African Rep.',text:'非洲共和国中心',value:0},
+{name:'Canada',text:'加拿大',value:0},
+{name:'Switzerland',text:'瑞士',value:0},
+{name:'Chile',text:'智利',value:0},
+{name:'China(中国)',text:'中国',value:0,label: {normal: {show: true,color: 'red'}}},
+{name:'Ivory Coast',text:'象牙海岸',value:0},
+{name:'Cameroon',text:'喀麦隆',value:0},
+{name:'Congo',text:'刚果',value:0},
+{name:'Dem. Rep. Congo',text:'刚果民主共和国',value:0},
+{name:'Republic of the Congo',text:'刚果共和国',value:0},
+{name:'Colombia',text:'哥伦比亚',value:0},
+{name:'Costa Rica',text:'哥斯达黎加',value:0},
+{name:'Cuba',text:'古巴',value:0},
+{name:'Northern Cyprus',text:'北塞浦路斯',value:0},
+{name:'Cyprus',text:'塞浦路斯',value:0},
+{name:'Czech Rep.',text:'捷克共和国',value:0},
+{name:'Germany',text:'德国',value:0},
+{name:'Djibouti',text:'吉布提',value:0},
+{name:'Denmark',text:'丹麦',value:0},
+{name:'Dominican Republic',text:'多米尼加共和国',value:0},
+{name:'Algeria',text:'阿尔及利亚',value:0},
+{name:'Ecuador',text:'厄瓜多尔',value:0},
+{name:'Egypt',text:'埃及',value:0},
+{name:'Eritrea',text:'厄立特里亚',value:0},
+{name:'Spain',text:'西班牙',value:0},
+{name:'Estonia',text:'爱沙尼亚',value:0},
+{name:'Ethiopia',text:'埃塞俄比亚',value:0},
+{name:'Finland',text:'芬兰',value:0},
+{name:'Fiji',text:'斐济',value:0},
+{name:'Falkland Islands',text:'福克兰群岛',value:0},
+{name:'France',text:'法国',value:0},
+{name:'Gabon',text:'加蓬',value:0},
+{name:'United Kingdom',text:'英国',value:0},
+{name:'Georgia',text:'格鲁吉亚',value:0},
+{name:'Ghana',text:'加纳',value:0},
+{name:'Guinea',text:'几内亚',value:0},
+{name:'Gambia',text:'冈比亚',value:0},
+{name:'Guinea Bissau',text:'几内亚比绍',value:0},
+{name:'Equatorial Guinea',text:'赤道几内亚',value:0},
+{name:'Greece',text:'希腊',value:0},
+{name:'Greenland',text:'格陵兰',value:0},
+{name:'Guatemala',text:'危地马拉',value:0},
+{name:'French Guiana',text:'法国圭亚那',value:0},
+{name:'Guyana',text:'圭亚那',value:0},
+{name:'Honduras',text:'洪都拉斯',value:0},
+{name:'Croatia',text:'克罗地亚',value:0},
+{name:'Haiti',text:'海地',value:0},
+{name:'Hungary',text:'匈牙利',value:0},
+{name:'Indonesia',text:'印度尼西亚',value:0},
+{name:'India',text:'印度',value:0},
+{name:'Ireland',text:'爱尔兰',value:0},
+{name:'Iran',text:'伊朗',value:0},
+{name:'Iraq',text:'伊拉克',value:0},
+{name:'Iceland',text:'冰岛',value:0},
+{name:'Israel',text:'以色列',value:0},
+{name:'Italy',text:'意大利',value:0},
+{name:'Jamaica',text:'牙买加',value:0},
+{name:'Jordan',text:'约旦',value:0},
+{name:'Japan',text:'日本',value:0},
+{name:'Kazakhstan',text:'哈萨克斯坦',value:0},
+{name:'Kenya',text:'肯尼亚',value:0},
+{name:'Kyrgyzstan',text:'吉尔吉斯斯坦',value:0},
+{name:'Cambodia',text:'柬埔寨',value:0},
+{name:'Korea',text:'韩国',value:0},
+{name:'Kosovo',text:'科索沃',value:0},
+{name:'Kuwait',text:'科威特',value:0},
+{name:'Lao PDR',text:'老挝',value:0},
+{name:'Lebanon',text:'黎巴嫩',value:0},
+{name:'Liberia',text:'利比里亚',value:0},
+{name:'Libya',text:'利比亚',value:0},
+{name:'Sri Lanka',text:'斯里兰卡',value:0},
+{name:'Lesotho',text:'莱索托',value:0},
+{name:'Lithuania',text:'立陶宛',value:0},
+{name:'Luxembourg',text:'卢森堡',value:0},
+{name:'Latvia',text:'拉脱维亚',value:0},
+{name:'Morocco',text:'摩洛哥',value:0},
+{name:'Moldova',text:'摩尔多瓦',value:0},
+{name:'Madagascar',text:'马达加斯加',value:0},
+{name:'Mexico',text:'新墨西哥州',value:0},
+{name:'Macedonia',text:'马其顿',value:0},
+{name:'Mali',text:'马里',value:0},
+{name:'Myanmar',text:'缅甸',value:0},
+{name:'Montenegro',text:'黑山',value:0},
+{name:'Mongolia',text:'蒙古',value:0},
+{name:'Mozambique',text:'莫桑比克',value:0},
+{name:'Mauritania',text:'毛里塔尼亚',value:0},
+{name:'Malawi',text:'马拉维',value:0},
+{name:'Malaysia',text:'马来西亚',value:0},
+{name:'Namibia',text:'纳米比亚',value:0},
+{name:'New Caledonia',text:'新喀里多尼亚',value:0},
+{name:'Niger',text:'尼日尔',value:0},
+{name:'Nigeria',text:'尼日利亚',value:0},
+{name:'Nicaragua',text:'尼加拉瓜',value:0},
+{name:'Netherlands',text:'荷兰',value:0},
+{name:'Norway',text:'挪威',value:0},
+{name:'Nepal',text:'尼泊尔',value:0},
+{name:'New Zealand',text:'新西兰',value:0},
+{name:'Oman',text:'阿曼',value:0},
+{name:'Pakistan',text:'巴基斯坦',value:0},
+{name:'Panama',text:'巴拿马',value:0},
+{name:'Peru',text:'秘鲁',value:0},
+{name:'Philippines',text:'菲律宾',value:0},
+{name:'Papua New Guinea',text:'巴布亚新几内亚',value:0},
+{name:'Poland',text:'波兰',value:0},
+{name:'Puerto Rico',text:'波多黎各',value:0},
+{name:'Dem. Rep. Korea',text:'朝鲜',value:0},
+{name:'Portugal',text:'葡萄牙',value:0},
+{name:'Paraguay',text:'巴拉圭',value:0},
+{name:'Qatar',text:'卡塔尔',value:0},
+{name:'Romania',text:'罗马尼亚',value:0},
+{name:'Russia',text:'俄罗斯',value:0},
+{name:'Rwanda',text:'卢旺达',value:0},
+{name:'W. Sahara',text:'西撒哈拉',value:0},
+{name:'Saudi Arabia',text:'沙特阿拉伯',value:0},
+{name:'Sudan',text:'苏丹',value:0},
+{name:'S. Sudan',text:'南苏丹',value:0},
+{name:'Senegal',text:'塞内加尔',value:0},
+{name:'Solomon Islands',text:'所罗门群岛',value:0},
+{name:'Sierra Leone',text:'塞拉利昂',value:0},
+{name:'El Salvador',text:'萨尔瓦多',value:0},
+{name:'Somaliland',text:'索马里兰',value:0},
+{name:'Somalia',text:'索马里',value:0},
+{name:'Serbia',text:'塞尔维亚',value:0},
+{name:'Suriname',text:'苏里南',value:0},
+{name:'Slovakia',text:'斯洛伐克',value:0},
+{name:'Slovenia',text:'斯洛文尼亚',value:0},
+{name:'Sweden',text:'瑞典',value:0},
+{name:'Swaziland',text:'斯威士兰',value:0},
+{name:'Syria',text:'叙利亚',value:0},
+{name:'Chad',text:'乍得',value:0},
+{name:'Togo',text:'多哥',value:0},
+{name:'Thailand',text:'泰国',value:0},
+{name:'Tajikistan',text:'塔吉克斯坦',value:0},
+{name:'Turkmenistan',text:'土库曼斯坦',value:0},
+{name:'Timor-Leste',text:'东帝汶',value:0},
+{name:'Trinidad and Tobago',text:'特立尼达和多巴哥',value:0},
+{name:'Tunisia',text:'突尼斯',value:0},
+{name:'Turkey',text:'火鸡',value:0},
+{name:'Tanzania',text:'坦桑尼亚联合共和国',value:0},
+{name:'Uganda',text:'乌干达',value:0},
+{name:'Ukraine',text:'乌克兰',value:0},
+{name:'Uruguay',text:'乌拉圭',value:0},
+{name:'United States',text:'美国',value:0},
+{name:'Uzbekistan',text:'乌兹别克斯坦',value:0},
+{name:'Venezuela',text:'委内瑞拉',value:0},
+{name:'Vietnam',text:'越南',value:0},
+{name:'Vanuatu',text:'瓦努阿图',value:0},
+{name:'West Bank',text:'西岸',value:0},
+{name:'Yemen',text:'也门',value:0},
+{name:'South Africa',text:'南非',value:0},
+{name:'Zambia',text:'赞比亚',value:0},
+{name:'Zimbabwe',text:'津巴布韦',value:0},
+{name:'Taiwan',text:'中国台湾',value:0},
+{name:'Iceland',text:'冰岛',value:0},
+{name:'Hong Kong',text:'中国香港',value:0}
+
+]
+//          ,label: {
+//              normal: {
+//                  show: true                    
+//              }
+//          }
+
+     }
+ ]
+};
+
+
+//获得数据
+function getData(){
+	var coutry = option.series[0].data;
+	for(var i=0;i<dataVal.length;i++){
+		var str = dataVal[i].split("	");
+		if(str[6].length > 3){
+			str =  str[6].substring(0,3);
+		}else{
+			str =  str[6];
+		}
+
+		for(var j=0;j<coutry.length;j++){
+			if(coutry[j].text.indexOf(str) >= 0){
+				coutry[j].value = 1000;
+				break;
+			}
+		}
+	}
+	option.series[0].data = coutry;
+}
+
+//比对数据
+getData();
+myChart.setOption(option);
+
+myChart.on('click', function(params){
+	console.log(params.data);//此处写点击事件内容
+  console.log(params.data.text);//此处写点击事件内容
+  var opt = this.getOption();
+	opt.color = ['red'];
+	myChart.setOption(opt);
+  if(params.data != undefined && params.data.value != 0){
+// 	  window.location.href="Main_03_03_01.html?country=" + params.data.text;
+	  $(".reg").attr("toPage","Main_03_03_01.html?country=" + params.data.text);
+	  $(".reg").click();
+  }
+});//点击
+myChart.on('mouseover', function (params) {
+// 	var city = params.data.city;
+// 	console.log(params.color);
+	var opt = this.getOption();
+	opt.color = ['red'];
+	myChart.setOption(opt);
+});
+
+
+$(function(){
+	var flag = true;
+	var stop;
+	$(".zoomCla").mousedown(function() {
+		flag = true;
+		var value = parseFloat($(this).attr("value"));
+		var opt = myChart.getOption();
+		var zoom = opt.series[0].zoom;
+		zoom = (zoom <= 0.4 ? 0.4 : zoom);
+		zoom = (zoom >= 100 ? 100 : zoom);
+		opt.series[0].zoom = parseFloat(zoom) + value;
+		myChart.setOption(opt);
+		var i = 1;
+		stop = setInterval(function() {//down 1s，才运行。
+        	if(flag){
+        		i = i + 0.1;
+        		value = value * i;
+        		opt = myChart.getOption();
+        		zoom = opt.series[0].zoom;
+        		zoom = parseFloat(zoom) + value;
+        		zoom = (zoom <= 0.4 ? 0.4 : zoom);
+        		zoom = (zoom >= 100 ? 100 : zoom);
+        		console.log(zoom);
+        		opt.series[0].zoom = zoom;
+        		myChart.setOption(opt);
+        	}
+		 }, 100);
+    });
+	$(".zoomCla").mouseup(function() {//鼠标up时，判断down了多久，不足一秒，不执行down的代码。
+		flag = false;
+		clearInterval(stop);
+    });
+});
+</script>
+<!-- //底部导航菜单 -->
+	<div class="bottomMenu" >
+<!-- 	跳转页面路径 -->
+		<div class="bottomMenu_01 bottomMenu_01_ExPOActive EXPO" onclick="jumpBotMenu('Main_03_01.html')">
+			<div class="bottomMenu_01_01" >走进“进博会”</div>
+			<div class="bottomMenu_01_02">ENTERING THE "IMPORT EXPO"</div>
+		</div>
+		
+		<div class="bottomMenu_01  EXPO" onclick="jumpBotMenu('Main_03_02_01.html')">
+			<div class="bottomMenu_01_01" >聚焦“进博会”</div>
+			<div class="bottomMenu_01_02">FOCUSING THE "IMPORT EXPO"</div>
+		</div>
+		<div class="bottomMenu_01 EXPO" onclick="jumpBotMenu('Main_03_03.html')">
+			<div class="bottomMenu_01_01" >点亮“进博会”</div>
+			<div class="bottomMenu_01_02">ILLUMINATING THE "IMPORT EXPO"</div>
+		</div>
+		
+<!-- 	放大缩小按钮	 -->
+		<div style="position: absolute;width: 38px;left: 95%;top:-50%;color: #fff;font-size: 25px;font-weight: 900;cursor: pointer;">
+			<div class="zoomCla" value="0.05" style="background: #FE680A;border-radius:10px;margin-bottom: 15px;height: 38px;box-shadow: 5px 5px 5px #aaa;">+</div>
+			<div class="zoomCla" value="-0.05" style="background: #FE680A;border-radius:10px;height: 38px;box-shadow: 5px 5px 5px #aaa;">-</div>
+		</div>
+</body>
+</html>
+<script src="resources/myJS/isOpPage.js" type="text/javascript"></script>

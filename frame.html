@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style type="text/css">
+html,body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+iframe {
+    margin: 0;
+    border-style: none;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+<link rel="stylesheet" href="resources/goey/css/gooey.min.css">
+<script src="resources/js/jquery.js"></script>
+<script src="resources/goey/js/gooey.min.js"></script>
+</head>
+
+<body>
+	<iframe id="father" style="height: 100%;width: 100%;" src="main.html"></iframe>
+	
+	<nav id="gooey-v" style="position: absolute;bottom:0px;">
+		<input type="checkbox" class="menu-open" name="menu-open4" id="menu-open4"/>
+		
+		<label class="open-button" for="menu-open4" style="margin-left: -5px;">
+			<img class="" alt="" src="Images/menuTopImage/004.png">
+		</label>
+	
+		<a class="menuA" href="javascript:void(0);" val="main_03.html"> <img class="gooey-menu-item" alt="" src="Images/menuTopImage/003.png"></a>
+		<a class="menuA" href="javascript:void(0);" val="main_02.html"> <img class="gooey-menu-item" alt="" src="Images/menuTopImage/002.png"></a>
+		<a class="menuA" href="javascript:void(0);" val="main_01.html"> <img class="gooey-menu-item" alt="" src="Images/menuTopImage/001.png"></a>
+		<a class="menuA" href="javascript:void(0);" val="main.html"> <img class="gooey-menu-item" alt="" src="Images/menuTopImage/005.png"></a>
+	</nav>
+		
+		<script>
+	$(function($) {
+
+
+$("#gooey-v").gooeymenu({
+// 			bgColor: "#68d099",
+// 			contentColor: "white",
+			style: "vertical",
+			horizontal: {
+// 				menuItemPosition: "glue"
+			},
+			vertical: {
+				menuItemPosition: "spaced",
+				direction: "up"
+			},
+			circle: {
+				radius: 90
+			},
+			margin: "small",
+			size: 70,
+			bounce: true,
+			bounceLength: "small",
+			transitionStep: 100,
+// 			hover: "#68d099"
+		});
+
+		$(".menuA").click(function(){
+			var path = $(this).attr("val");
+			$("#father").attr("src",path);
+			$(".open-button").click();
+		});
+	});
+</script>
+</body>
+</html>

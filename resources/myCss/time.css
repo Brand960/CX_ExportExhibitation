@@ -1,0 +1,79 @@
+@charset "utf-8";
+#timeTopDiv {
+	width: 80%;
+	height: 480px;
+/* 	border: 1px solid red; */
+	position: absolute;
+	top: 30%;
+	left: 10%;
+}
+#timeTopDiv  >div >div{
+	display: inline;
+/* 	position: absolute; */
+	bottom: 0px;
+	cursor: pointer;
+/* 	box-shadow: 19px 10px 13px rgba(34, 25, 25, 0.2); */
+}
+
+/* #timeTopDiv  >div >div > div:HOVER{ */
+/* 	border: 1px solid #1F91EC; */
+/* } */
+#timeTopDiv  >div >div > img{
+/* 	margin: 0px 0px 0px -1000px; */
+	position: absolute;
+	bottom: 5%;
+	left:0%;
+	z-index:0;
+}
+#timeTopDiv  >div >div > .imgOdd{
+/* 	margin: 0px 0px 0px -1000px; */
+	position: absolute;
+	left:100%;
+	bottom: 4.7%;
+	z-index:9;
+}
+#timeTopDiv  >div >div > div{
+	width:100px;
+	background:#000;
+	position: absolute;
+	left:150%;
+	top:40%;
+	opacity:0.5;
+	color:#fff;
+	padding: 10px 10px 0px;
+	border-top: 5px solid #0000FE;
+/* 	text-align: center; */
+	font-size: 12px;
+	z-index: 999;
+}
+#timeTopDiv  >div >div > div > h3{
+	    margin: -5px 0px;
+	    font-size: 17px;
+}
+
+#timeTopDiv  >div >div > .slide_2{
+	left:150%;
+	top:21%;
+	border-top: 5px solid red;
+}
+#timeTopDiv  >div >div > .slide_3{
+	left:-15%;
+	top:31%;
+	border-top: 5px solid #63FE34;
+}
+#timeTopDiv  >div >div > .slide_4{
+	left:170%;
+	top:0%;
+	border-top: 5px solid #7B00FF;
+}
+#timeTopDiv  >div >div > .slide_5{
+	left:-15%;
+	top:30%;
+	border-top: 5px solid #0000FA;
+}
+#timeTopDiv  >div >div > .slide_6{
+	left:170%;
+	top:0%;
+	border-top: 5px solid #FBEE13;
+}
+
